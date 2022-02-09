@@ -1,5 +1,7 @@
 import { client, checkError } from './client';
 
+
+//AUTH FUNCTIONS
 export function getUser() {
   return client.auth.session();
 
@@ -25,6 +27,9 @@ export async function logout() {
 
   return window.location.href = '../';
 }
+
+
+//CRUD FUNCTIONS
 
 export async function createGame(game){
   const response = await client
