@@ -11,15 +11,19 @@ export default function AuthPage(props) {
     e.preventDefault();
       
     // sign the user in using the form state
+    const user = signIn(signInUpEmail, signInUpPassword);
 
 
     // set the user in App.js state using the correct prop callback. If you did the ternary right in App.js, this should automatically redirect the user to the board game list
+    props.setUser(user);
   }
     
   async function handleSignUp() {
     // sign the user up using the form state
+    const user = signUp(signInUpEmail, signInUpPassword);
 
     // set the user in App.js state using the correct prop callback. If you did the ternary right in App.js, this should automatically redirect the user to the board game list
+    props.setUser(user);
   }
 
   return (
@@ -31,14 +35,14 @@ export default function AuthPage(props) {
             Email
           {/* on change, update the form state for email */}
           <input required type="email" name="email" 
-            onChange={(e)=> setSignInUpEmail(e.value.target)}
+            onChange={(e)=> setSignInUpEmail(e.target.value)}
           />
         </label>
         <label>
             Password
           {/* on change, update the form state for password */}
           <input required type="password" name="password" 
-            onChange={(e)=> setSignInUpPassword(e.value.target)}
+            onChange={(e)=> setSignInUpPassword(e.target.value)}
           />
         </label>
         <button
