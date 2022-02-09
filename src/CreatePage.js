@@ -33,7 +33,6 @@ export default function CreatePage() {
       max_players: maxPlayersForm
     };
     const response = await createGame(game);
-    console.log(response);
 
     // use history.push to send the user to the list page
     history.push('/board-games');
