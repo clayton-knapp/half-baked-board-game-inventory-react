@@ -1,0 +1,92 @@
+body, html, #root, .App {
+  height: 100%;
+  background-image: url(./bg.webp);
+  background-size: cover;
+}
+
+.App {
+  display: grid;
+  grid-template-rows: 75px 1fr;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.App header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App header a {
+  margin: 10px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.App header a:hover {
+  background-color: rgb(255, 153, 0);
+}
+
+.App header .active-link {
+  background-color: rgb(250, 185, 63);
+  /* background-color: rgb(106, 250, 250); */
+}
+
+.App main {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 50px;
+}
+
+.auth, .list, .detail, .create {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+form { 
+  text-align: right;
+  margin: 100px;
+}
+
+form label {
+  display: block;
+}
+
+form button {
+  margin: 5px;
+}
+
+form label input, form label textarea, form label select  {
+  margin: 5px;
+}
+
+select {
+  width: 150px;
+}
+
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+
+}
+
+.detail {
+  width: 60%;
+  margin: 0 auto;
+}
