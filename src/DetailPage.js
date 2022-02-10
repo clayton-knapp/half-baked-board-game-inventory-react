@@ -39,12 +39,14 @@ export default function DetailPage() {
           {game.description}
         </p>
       </div>
-      <button
-        onClick={handleUpdate}
-      >Update this Page</button>
-      <button
-        onClick={handleDelete}
-      >Delete this game (FOREVER)</button>
+      <div className='button-container'>
+        <button
+          onClick={handleUpdate}
+        >Update this Page</button>
+        <button
+          onClick={handleDelete}
+        >Delete this game (FOREVER)</button>
+      </div>
     </>
   );
 }

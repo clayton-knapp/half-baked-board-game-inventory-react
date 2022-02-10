@@ -61,6 +61,7 @@ export default function UpdatePage() {
     }
 
   }
+  // To refactor the form you would need to pass down the string 'create' or 'update' and also pass down the handle submit function for create or update as props
 
   return (
     <div className='create'>
