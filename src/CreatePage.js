@@ -78,14 +78,14 @@ export default function CreatePage() {
         <label>
             Min Players
           {/* on change, set the min players in state */}
-          <input required name='min_players' 
+          <input required type='number' name='min_players' 
             onChange ={(e)=> setMinPlayersForm(e.target.value)}
           />
         </label>
         <label>
             Max Players
           {/* on change, set the max players in state */}
-          <input required name='max_players' 
+          <input required type='number' name='max_players' 
             onChange ={(e)=> setMaxPlayersForm(e.target.value)}
           />
         </label>
