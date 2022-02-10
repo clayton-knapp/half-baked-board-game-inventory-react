@@ -12,13 +12,14 @@ import AuthPage from './AuthPage';
 import DetailPage from './DetailPage';
 import ListPage from './ListPage';
 import CreatePage from './CreatePage';
+import UpdatePage from './UpdatePage';
 
 import './App.css';
 import { logout } from './services/fetch-utils';
 
 export default function App() {
   // You'll need to track the user in state
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(localStorage.getItem('supabase.auth.token'));
 
   // add a useEffect to get the user and inject the user object into state on load
   useEffect(() => {
@@ -45,10 +46,10 @@ export default function App() {
           {
             user && <ul>
               <li>
-                <Link to='/board-games' >List Page </Link>
+                <NavLink to='/board-games' >List Page </NavLink>
               </li>
               <li>
-                <Link to='/create' >Create Page </Link>
+                <NavLink to='/create' >Create Page </NavLink>
               </li>
               <button
                 onClick={handleLogout}
@@ -88,6 +89,14 @@ export default function App() {
               {
                 user
                   ? <CreatePage />
+                  : <Redirect to='/' />
+              }
+            </Route>
+            <Route exact path="/update-game/:id">
+              {/* if there is a user, render the update page. Otherwise, redirect to the home route/auth page */}
+              {
+                user
+                  ? <UpdatePage />
                   : <Redirect to='/' />
               }
             </Route>

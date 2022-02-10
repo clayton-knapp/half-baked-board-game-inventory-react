@@ -30,7 +30,9 @@ export default function AuthPage(props) {
     <div className='auth'>
       <h1><em>Boardzo</em></h1>
       {/* on submit, sign the user in using the function defined above */}
-      <form>
+      <form
+        onSubmit = {handleSignIn}
+      >
         <label>
             Email
           {/* on change, update the form state for email */}
@@ -46,7 +48,7 @@ export default function AuthPage(props) {
           />
         </label>
         <button
-          onClick = {handleSignIn}
+          // onClick = {handleSignIn}
         >Sign In</button>
         {/* on clicking sign up, sign the user up using the function defined above */}
         <button type="button" 
