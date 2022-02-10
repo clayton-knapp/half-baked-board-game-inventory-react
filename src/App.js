@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { getUser } from './services/fetch-utils';
+// import { getUser } from './services/fetch-utils';
 import {
   BrowserRouter as Router,
   Switch,
   NavLink,
-  Link,
+  // Link,
   Route,
   Redirect,
 } from 'react-router-dom';
@@ -36,13 +36,12 @@ export default function App() {
     setUser('');
   }
 
-  console.log(user);
-
   return (
     <Router>
       <div className='App'>
         <header>
           {/* if there is a user in state, render out a link to the board games list, the create page, and add a button to let the user logout */}
+          <h2>Boardzo</h2>
           {
             user && <ul>
               <li>

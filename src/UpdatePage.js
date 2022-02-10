@@ -37,7 +37,7 @@ export default function UpdatePage() {
       setId(game.id);
     }
     fetchAndSetSingleGame();
-  }, []);
+  }, [match.params.id]);
   
 
 

@@ -28,7 +28,6 @@ export default function AuthPage(props) {
 
   return (
     <div className='auth'>
-      <h1><em>Boardzo</em></h1>
       {/* on submit, sign the user in using the function defined above */}
       <form
         onSubmit = {handleSignIn}
