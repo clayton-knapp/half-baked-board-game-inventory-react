@@ -73,7 +73,7 @@ export async function updateGame(game, id) {
   const response = await client
     .from('board_games')
     .update(game)
-    .match(id);
+    .match({ id: id });
 
   return checkError(response);
 }
