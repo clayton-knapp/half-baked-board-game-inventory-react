@@ -11,7 +11,7 @@ export default function AuthPage(props) {
     e.preventDefault();
       
     // sign the user in using the form state
-    const user = signIn(signInUpEmail, signInUpPassword);
+    const user = await signIn(signInUpEmail, signInUpPassword);
 
 
     // set the user in App.js state using the correct prop callback. If you did the ternary right in App.js, this should automatically redirect the user to the board game list
@@ -20,7 +20,7 @@ export default function AuthPage(props) {
     
   async function handleSignUp() {
     // sign the user up using the form state
-    const user = signUp(signInUpEmail, signInUpPassword);
+    const user = await signUp(signInUpEmail, signInUpPassword);
 
     // set the user in App.js state using the correct prop callback. If you did the ternary right in App.js, this should automatically redirect the user to the board game list
     props.setUser(user);

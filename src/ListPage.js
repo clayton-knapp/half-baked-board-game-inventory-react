@@ -13,6 +13,7 @@ export default function ListPage() {
       setGames(games);
     }
     fetchAndSetGames();
+
   }, []);
 
   return (

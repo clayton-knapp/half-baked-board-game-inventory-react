@@ -19,7 +19,7 @@ import { logout } from './services/fetch-utils';
 
 export default function App() {
   // You'll need to track the user in state
-  const [user, setUser] = useState(localStorage.getItem('supabase.auth.token'));
+  const [user, setUser] = useState('');
 
   // add a useEffect to get the user and inject the user object into state on load
   useEffect(() => {
