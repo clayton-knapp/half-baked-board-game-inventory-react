@@ -10,7 +10,6 @@ export default function ListPage() {
   useEffect(() => {
     async function fetchAndSetGames() {
       const games = await getGames();
-      console.log(games);
       setGames(games);
     }
     fetchAndSetGames();
