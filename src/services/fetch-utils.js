@@ -1,5 +1,7 @@
 import { client, checkError } from './client';
 
+
+//AUTH FUNCTIONS
 export function getUser() {
   return client.auth.session();
 
@@ -26,6 +28,9 @@ export async function logout() {
   return window.location.href = '../';
 }
 
+
+//CRUD FUNCTIONS
+
 export async function createGame(game){
   const response = await client
     .from('board_games')
@@ -45,7 +50,6 @@ export async function getGames() {
 }
 
 
-
 export async function getGameById(id) {
   const response = await client
     .from('board_games')
@@ -54,4 +58,22 @@ export async function getGameById(id) {
     .single();
 
   return checkError(response);    
+}
+
+export async function deleteGame(id) {
+  const response = await client
+    .from('board_games')
+    .delete()
+    .match({ id });
+
+  return checkError(response);
+}
+
+export async function updateGame(game, id) {
+  const response = await client
+    .from('board_games')
+    .update(game)
+    .match(id);
+
+  return checkError(response);
 }
